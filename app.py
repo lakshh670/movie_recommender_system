@@ -3,7 +3,7 @@ import plotly.express as px
 import pandas as pd
 import pickle
 movies=pickle.load(open('movies_dict.pkl','rb'))
-url = 'https://drive.google.com/uc?id=1SrOFz9TYi41Ck9IqDrBLeZNwjJYedmDV'
+url = 'https://drive.google.com/uc?id=1aAh3j-gItp6RU6ODlC6G3ui1dvzf7fLM'
 output = 'similarity.pkl'
 gdown.download(url, output, quiet=False)
 
@@ -58,5 +58,6 @@ if st.button("Recommend"):
         with cols[i]:
             st.text(names[i])
             st.image(posters[i])
+
 
 
