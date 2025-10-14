@@ -1,8 +1,22 @@
+
+
+
+
+packages = ['plotly', 'gdown', 'pandas', 'streamlit', 'requests']
+for p in packages:
+    try:
+        __import__(p)
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", p])
 import streamlit as st
 import plotly.express as px
 import pandas as pd
 import gdown
 import pickle
+
+import sys
+import subprocess
+
 movies=pickle.load(open('movies_dict.pkl','rb'))
 url = 'https://drive.google.com/uc?id=1aAh3j-gItp6RU6ODlC6G3ui1dvzf7fLM'
 output = 'similarity.pkl'
@@ -59,6 +73,7 @@ if st.button("Recommend"):
         with cols[i]:
             st.text(names[i])
             st.image(posters[i])
+
 
 
 
