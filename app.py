@@ -2,12 +2,7 @@
 
 
 
-packages = ['plotly', 'gdown', 'pandas', 'streamlit', 'requests']
-for p in packages:
-    try:
-        __import__(p)
-    except ImportError:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", p])
+
 import streamlit as st
 import plotly.express as px
 import pandas as pd
@@ -73,6 +68,7 @@ if st.button("Recommend"):
         with cols[i]:
             st.text(names[i])
             st.image(posters[i])
+
 
 
 
